@@ -12,7 +12,7 @@ app.use('/public', express.static(process.cwd() + '/public'));
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
-app.post('/api/fileanalyse', upload.single('file'), function (req, res) {
+app.post('/api/fileanalyse', upload.single('upfile'), function (req, res) {
   // Extract file information
   const fileInfo = {
     name: req.file.originalname,
