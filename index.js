@@ -15,7 +15,7 @@ var upload = multer({ storage: storage });
 app.post('/api/fileanalyse', upload.single('file'), function (req, res) {
   // Extract file information
   const fileInfo = {
-    filename: req.file.originalname,
+    name: req.file.originalname,
     type: req.file.mimetype,
     size: req.file.size // Size in bytes
   };
